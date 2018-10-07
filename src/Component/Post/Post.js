@@ -17,7 +17,7 @@ export default class Judge extends React.Component {
     const { postObj } = this.props;
     console.log(postObj.createdAt)
     return (
-      <div className="myCard">
+      <div className="myCard" >
         <MuiThemeProvider>
           <Card>
             <CardHeader
@@ -28,14 +28,25 @@ export default class Judge extends React.Component {
             <CardText>
               {postObj.description}
             </CardText>
-            <CardMedia className="">
+            <CardMedia className="gridHeight">
               <FbImageGrid
                 images={postObj.images}
-                
               />
             </CardMedia>
             <CardActions>
-              <FlatButton label="Like" />
+
+              <div className="emoticons" >
+                <div id="emoti">
+                  <FacebookEmoji type="like" size="sm" />
+                  <FacebookEmoji type="love" size="sm" />
+                  <FacebookEmoji type="wow" size="sm" />
+                  <FacebookEmoji type="yay" size="sm" />
+                  <FacebookEmoji type="angry" size="sm" />
+                  <FacebookEmoji type="haha" size="sm" />
+                  <FacebookEmoji type="sad" size="sm" />
+                </div>
+                <FlatButton label="Like" />
+              </div>
               <FlatButton label="Comment" />
               <FlatButton label="Share" />
             </CardActions>
